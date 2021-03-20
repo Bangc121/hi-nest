@@ -1,13 +1,16 @@
 import { Module } from '@nestjs/common';
-import { MoviesController } from './movies/movies.controller';
-import { MoviesService } from './movies/movies.service';
+import { MoviesModule } from './movies/movies.module';
+import { AppController } from './app.controller';
 
 @Module({
-  imports: [],
-  controllers: [MoviesController],
-  providers: [MoviesService],
+  imports: [MoviesModule],
+  controllers: [AppController],
+  providers: [],
 })
 export class AppModule {}
+
+// app.module은 appcontroller 와 appprovider만 가지고있어야해
+// 언제 appcontroller?
 
 // AppModule이 클래스인걸 알수있다.
 // 그리고 재밌는 함수를 찾을수있지 데코레이터라고 부른다.

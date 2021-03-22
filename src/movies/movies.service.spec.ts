@@ -15,4 +15,14 @@ describe('MoviesService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  describe('getAll()', () => {
+    it('should return an array', () => {
+      const result = service.getAll();
+      expect(result).toBeInstanceOf(Array);
+    });
+  });
 });
+
+// describe 테스트를 묘사하는 건데
+// beforeEach 테스트를 하기전 실행
